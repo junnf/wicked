@@ -225,6 +225,7 @@ case "${_id#Id=}" in
 	/usr/bin/systemctl --force enable wicked.service || :
 ;;
 esac
+/usr/bin/systemctl reload dbus.service 2>/dev/null || :
 
 %preun service
 # stop the daemons on removal
